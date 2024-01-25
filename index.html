@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serie de Fibonacci</title>
+</head>
+<body>
+  <h1>Serie de Fibonacci</h1>
+
+  <script>
+   // Solicitar número al usuario
+let numero = prompt("Ingresa un número:");
+
+// Verificar si el dato de entrada es un número
+while (isNaN(numero)) {
+  numero = prompt("Error: Ingresa un número válido:");
+}
+
+// Convertir el número a entero
+numero = parseInt(numero);
+
+// Función para obtener la serie de Fibonacci
+function fibonacci(n) {
+  let serie = [0, 1];
+
+  for (let i = 2; i < n; i++) {
+    serie[i] = serie[i - 1] + serie[i - 2];
+  }
+
+  return serie;
+}
+
+// Obtener la serie de Fibonacci según el número ingresado
+let serieFibonacci = fibonacci(numero);
+
+// Imprimir la serie de Fibonacci
+console.log(serieFibonacci);
+
+// Imprimir el resultado en el DOM
+document.getElementById("resultado").innerHTML = serieFibonacci.join(", ");
+
+
+</script>
+</body>
+</html>
+
